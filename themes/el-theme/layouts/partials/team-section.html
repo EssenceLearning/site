@@ -1,0 +1,45 @@
+{{ if gt (len .Site.Data.team) 0 }}
+<!-- Team Section (homepage teaser — shows first 4) -->
+<section class="py-16 md:py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center mb-12">
+      <p class="text-el-amber-500 text-sm font-semibold uppercase tracking-widest mb-2">Our Instructors</p>
+      <h2 class="font-heading text-3xl md:text-4xl font-extrabold text-el-navy-900 mb-4">
+        {{ .Site.Params.team_title }}
+      </h2>
+      <p class="text-gray-500 max-w-xl mx-auto">{{ .Site.Params.team_subtitle }}</p>
+    </div>
+
+    <!-- Grid — first 4 members -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-8">
+      {{ range first 4 (sort .Site.Data.team) }}
+      <a href="/team/" class="group text-center">
+        <div class="w-24 h-24 rounded-full overflow-hidden ring-4 ring-el-amber-100 mx-auto mb-3 bg-gradient-to-br from-el-navy-900 to-el-amber-700 flex items-center justify-center group-hover:ring-el-amber-300 transition-all duration-200">
+          {{ if .image }}
+          <img src="{{ urls.JoinPath $.Site.BaseURL .image }}"
+               alt="{{ .name }}"
+               class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-200" />
+          {{ else }}
+          <span class="text-xl font-extrabold font-heading text-sky-200 select-none">
+            {{ substr .name 0 2 | upper }}
+          </span>
+          {{ end }}
+        </div>
+        <h4 class="font-heading font-bold text-el-navy-900 text-sm group-hover:text-el-amber-600 transition-colors duration-150">{{ .name }}</h4>
+        <p class="text-gray-500 text-xs mt-0.5">{{ .position }}</p>
+      </a>
+      {{ end }}
+    </div>
+
+    <div class="text-center">
+      <a href="/team/"
+         class="inline-flex items-center gap-2 border border-el-amber-500 text-el-amber-600 hover:bg-el-amber-500 hover:text-white font-semibold px-6 py-2.5 rounded-xl text-sm transition-all duration-200">
+        Meet the full team
+        <i class="fas fa-arrow-right text-xs"></i>
+      </a>
+    </div>
+
+  </div>
+</section>
+{{ end }}

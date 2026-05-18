@@ -1,0 +1,26 @@
+<!-- CTA Band -->
+<section class="bg-gradient-to-r from-el-amber-600 to-el-amber-500 py-14">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="font-heading text-3xl md:text-4xl font-extrabold text-white mb-3">
+      {{ .Site.Params.cta_headline }}
+    </h2>
+    <p class="text-amber-100 text-base md:text-lg mb-8">
+      {{ .Site.Params.cta_subtext }}
+    </p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="{{ .Site.Params.cta_url }}"
+         class="bg-white text-el-amber-700 hover:bg-amber-50 font-bold px-8 py-3.5 rounded-xl text-base transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+        {{ .Site.Params.cta_button }}
+        <i class="fas fa-arrow-right ml-2"></i>
+      </a>
+      {{ with .Site.Params.whatsapp }}
+      <a href="https://wa.me/{{ . }}?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20your%20courses."
+         target="_blank" rel="noopener"
+         class="flex items-center gap-2 border-2 border-white/40 hover:border-white text-white font-semibold px-8 py-3.5 rounded-xl text-base transition-all duration-200">
+        <i class="fab fa-whatsapp text-lg"></i>
+        WhatsApp Us
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>

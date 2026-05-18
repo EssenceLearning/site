@@ -1,0 +1,133 @@
+{{- $currentPage := . -}}
+<nav class="bg-white border-b border-gray-200 shadow-sm sticky top-0 z-50"
+     x-data="{ mobileOpen: false }">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+
+      <!-- Logo -->
+      <a href="{{ .Site.BaseURL }}" class="flex items-center flex-shrink-0">
+        <img src="{{ urls.JoinPath .Site.BaseURL .Site.Params.logo_nav }}"
+             alt="{{ .Site.Title }}"
+             class="h-12 w-auto object-contain" />
+      </a>
+
+      <!-- Desktop nav links -->
+      <div class="hidden md:flex items-center gap-1">
+        {{ range .Site.Menus.main }}
+          {{ if .Children }}
+            <div class="relative" x-data="{ open: false }">
+              <button @click="open = !open"
+                      @click.outside="open = false"
+                      class="flex items-center gap-1 px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-el-navy-900 hover:bg-gray-100 transition-colors duration-150">
+                {{ .Name }}
+                <svg :class="open ? 'rotate-180' : ''"
+                     class="w-4 h-4 transition-transform duration-200"
+                     fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </button>
+              <div x-show="open"
+                   x-transition:enter="transition ease-out duration-100"
+                   x-transition:enter-start="opacity-0 scale-95"
+                   x-transition:enter-end="opacity-100 scale-100"
+                   x-transition:leave="transition ease-in duration-75"
+                   x-transition:leave-start="opacity-100 scale-100"
+                   x-transition:leave-end="opacity-0 scale-95"
+                   class="absolute left-0 mt-1 w-52 bg-white rounded-lg shadow-xl ring-1 ring-black ring-opacity-5 z-50 overflow-hidden">
+                {{ range .Children }}
+                  <a href="{{ .URL }}"
+                     class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-el-amber-500 hover:text-white transition-colors duration-100">
+                    {{ .Name }}
+                  </a>
+                {{ end }}
+              </div>
+            </div>
+          {{ else }}
+            <a href="{{ .URL }}"
+               class="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-el-navy-900 hover:bg-gray-100 transition-colors duration-150">
+              {{ .Name }}
+            </a>
+          {{ end }}
+        {{ end }}
+      </div>
+
+      <!-- Desktop right: phone + CTA -->
+      <div class="hidden md:flex items-center gap-4">
+        <a href="tel:{{ .Site.Params.phone1 | replaceRE "[^0-9+]" "" }}"
+           class="flex items-center gap-1.5 text-sm text-gray-500 hover:text-el-amber-600 transition-colors duration-150">
+          <i class="fas fa-phone text-xs"></i>
+          {{ .Site.Params.phone1 }}
+        </a>
+        <a href="{{ .Site.Params.hero_cta_primary_url }}"
+           class="bg-el-amber-500 hover:bg-el-amber-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors duration-150 whitespace-nowrap">
+          Enquire Now
+        </a>
+      </div>
+
+      <!-- Mobile: hamburger -->
+      <button @click="mobileOpen = !mobileOpen"
+              class="md:hidden p-2 rounded-md text-gray-600 hover:text-el-navy-900 hover:bg-gray-100 transition-colors duration-150"
+              aria-label="Toggle navigation">
+        <svg x-show="!mobileOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        <svg x-show="mobileOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+
+    </div><!-- /flex row -->
+
+    <!-- Mobile menu -->
+    <div x-show="mobileOpen"
+         x-transition:enter="transition ease-out duration-150"
+         x-transition:enter-start="opacity-0 -translate-y-2"
+         x-transition:enter-end="opacity-100 translate-y-0"
+         x-transition:leave="transition ease-in duration-100"
+         x-transition:leave-start="opacity-100 translate-y-0"
+         x-transition:leave-end="opacity-0 -translate-y-2"
+         class="md:hidden pb-4 border-t border-gray-200 mt-1 pt-2">
+      {{ range .Site.Menus.main }}
+        {{ if .Children }}
+          <div x-data="{ subOpen: false }">
+            <button @click="subOpen = !subOpen"
+                    class="w-full flex justify-between items-center px-3 py-2 rounded-md text-sm text-gray-600 hover:text-el-navy-900 hover:bg-gray-100 transition-colors duration-150">
+              {{ .Name }}
+              <svg :class="subOpen ? 'rotate-180' : ''"
+                   class="w-4 h-4 transition-transform duration-200"
+                   fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div x-show="subOpen" class="pl-4 mt-0.5 space-y-0.5">
+              {{ range .Children }}
+                <a href="{{ .URL }}"
+                   class="block px-3 py-2 rounded-md text-sm text-gray-500 hover:text-el-navy-900 hover:bg-gray-100 transition-colors duration-150">
+                  {{ .Name }}
+                </a>
+              {{ end }}
+            </div>
+          </div>
+        {{ else }}
+          <a href="{{ .URL }}"
+             class="block px-3 py-2 rounded-md text-sm text-gray-600 hover:text-el-navy-900 hover:bg-gray-100 transition-colors duration-150">
+            {{ .Name }}
+          </a>
+        {{ end }}
+      {{ end }}
+      <!-- Mobile CTA -->
+      <div class="mt-3 px-3 space-y-2">
+        <a href="tel:{{ .Site.Params.phone1 | replaceRE "[^0-9+]" "" }}"
+           class="flex items-center gap-2 text-sm text-gray-500 py-2">
+          <i class="fas fa-phone text-xs text-el-amber-500"></i>
+          {{ .Site.Params.phone1 }}
+        </a>
+        <a href="{{ .Site.Params.hero_cta_primary_url }}"
+           class="block w-full text-center bg-el-amber-500 hover:bg-el-amber-600 text-white text-sm font-semibold px-4 py-2.5 rounded-lg transition-colors duration-150">
+          Enquire Now
+        </a>
+      </div>
+    </div><!-- /mobile menu -->
+
+  </div><!-- /container -->
+</nav>

@@ -1,0 +1,92 @@
+{{ define "main" }}
+<article>
+  <!-- Post header -->
+  <div class="bg-el-navy-900 py-12 md:py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav class="flex items-center gap-2 text-sm text-gray-500 mb-5">
+        <a href="{{ .Site.BaseURL }}" class="hover:text-el-amber-400 transition-colors">Home</a>
+        <i class="fas fa-chevron-right text-xs"></i>
+        <a href="/blog/" class="hover:text-el-amber-400 transition-colors">Blog</a>
+        <i class="fas fa-chevron-right text-xs"></i>
+        <span class="text-gray-400 line-clamp-1">{{ .Title }}</span>
+      </nav>
+      <h1 class="font-heading text-3xl md:text-4xl font-extrabold text-white mb-4 leading-tight">
+        {{ .Title }}
+      </h1>
+      <div class="flex items-center gap-4 text-sm text-gray-400">
+        <span class="flex items-center gap-1.5">
+          <i class="fas fa-calendar text-el-amber-500"></i>
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+        </span>
+        {{ with .Params.author }}
+        <span class="flex items-center gap-1.5">
+          <i class="fas fa-user text-el-amber-500"></i>
+          {{ . }}
+        </span>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+
+  <!-- Featured image -->
+  {{ with .Params.banner }}
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6">
+    <img src="{{ urls.JoinPath $.Site.BaseURL . }}" alt="{{ $.Title }}"
+         class="w-full rounded-2xl shadow-lg object-cover max-h-80" />
+  </div>
+  {{ end }}
+
+  <!-- Post body -->
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+    <div class="el-prose">
+      {{ .Content }}
+    </div>
+
+    <!-- Tags -->
+    {{ with .Params.tags }}
+    <div class="mt-8 pt-6 border-t border-gray-100 flex flex-wrap gap-2">
+      {{ range . }}
+      <span class="bg-el-amber-100 text-el-amber-700 text-xs font-semibold px-3 py-1 rounded-full">{{ . }}</span>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    <!-- Navigation -->
+    <div class="mt-10 pt-6 border-t border-gray-100 flex justify-between gap-4">
+      <div class="flex-1">
+        {{ with .PrevInSection }}
+        <a href="{{ .Permalink }}"
+           class="group flex items-start gap-2 text-sm text-gray-500 hover:text-el-amber-600 transition-colors">
+          <i class="fas fa-arrow-left mt-1 text-xs group-hover:-translate-x-1 transition-transform"></i>
+          <div>
+            <div class="text-xs uppercase tracking-wide text-gray-400 mb-0.5">Previous</div>
+            <div class="font-semibold line-clamp-2">{{ .Title }}</div>
+          </div>
+        </a>
+        {{ end }}
+      </div>
+      <div class="flex-1 text-right">
+        {{ with .NextInSection }}
+        <a href="{{ .Permalink }}"
+           class="group flex items-start justify-end gap-2 text-sm text-gray-500 hover:text-el-amber-600 transition-colors">
+          <div>
+            <div class="text-xs uppercase tracking-wide text-gray-400 mb-0.5">Next</div>
+            <div class="font-semibold line-clamp-2">{{ .Title }}</div>
+          </div>
+          <i class="fas fa-arrow-right mt-1 text-xs group-hover:translate-x-1 transition-transform"></i>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+
+    <div class="mt-8 text-center">
+      <a href="/blog/"
+         class="inline-flex items-center gap-2 border border-el-amber-500 text-el-amber-600 hover:bg-el-amber-500 hover:text-white font-semibold px-6 py-2.5 rounded-xl text-sm transition-all duration-200">
+        <i class="fas fa-arrow-left text-xs"></i> Back to Blog
+      </a>
+    </div>
+  </div>
+</article>
+
+{{ partial "cta-band.html" . }}
+{{ end }}

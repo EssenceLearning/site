@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <clipPath id="c"><circle cx="100" cy="100" r="90"/></clipPath>
+  </defs>
+  <!-- Navy circle -->
+  <circle cx="100" cy="100" r="90" fill="#0f172a"/>
+  <g clip-path="url(#c)">
+    <!-- E (white) — slightly bolder for small sizes -->
+    <rect x="22" y="40" width="19" height="86" fill="white" rx="2"/>
+    <rect x="22" y="40" width="54" height="20" fill="white" rx="2"/>
+    <rect x="22" y="79" width="46" height="17" fill="white" rx="2"/>
+    <rect x="22" y="106" width="54" height="20" fill="white" rx="2"/>
+    <!-- L (amber) -->
+    <rect x="83" y="53" width="19" height="73" fill="#f59e0b" rx="2"/>
+    <rect x="83" y="106" width="55" height="20" fill="#f59e0b" rx="2"/>
+    <!-- Amber trajectory arc (thicker for legibility) -->
+    <path d="M 44 158 C 68 115, 130 82, 172 62"
+          stroke="#f59e0b" stroke-width="6" fill="none" stroke-linecap="round"/>
+  </g>
+  <!-- Sparkle -->
+  <g transform="translate(179,24)">
+    <path d="M 0 -8 L 2 -2 L 8 0 L 2 2 L 0 8 L -2 2 L -8 0 L -2 -2 Z" fill="#f59e0b"/>
+  </g>
+</svg>

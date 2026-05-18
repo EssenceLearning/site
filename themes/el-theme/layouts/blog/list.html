@@ -1,0 +1,84 @@
+{{ define "main" }}
+  {{ partial "page-header.html" . }}
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {{ range .Pages.ByDate.Reverse }}
+      <article class="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-200 flex flex-col">
+        {{ with .Params.banner }}
+        <img src="{{ urls.JoinPath $.Site.BaseURL . }}" alt="{{ $.Title }}"
+             class="w-full h-44 object-cover" />
+        {{ else }}
+        <div class="w-full h-44 bg-gradient-to-br from-el-amber-100 to-slate-100 flex items-center justify-center">
+          <i class="fas fa-plane text-el-amber-300 text-4xl"></i>
+        </div>
+        {{ end }}
+        <div class="p-5 flex flex-col flex-1">
+          <div class="flex items-center gap-2 text-xs text-gray-400 mb-2">
+            <i class="fas fa-calendar text-el-amber-400"></i>
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+          </div>
+          <h2 class="font-heading font-bold text-el-navy-900 text-base leading-snug mb-2">
+            <a href="{{ .Permalink }}" class="hover:text-el-amber-600 transition-colors">{{ .Title }}</a>
+          </h2>
+          <p class="text-gray-500 text-sm leading-relaxed flex-1 mb-4 line-clamp-3">
+            {{ .Summary | plainify | truncate 130 }}
+          </p>
+          <a href="{{ .Permalink }}"
+             class="flex items-center gap-1.5 text-el-amber-600 text-sm font-semibold hover:text-el-amber-700 transition-colors mt-auto">
+            Continue reading <i class="fas fa-arrow-right text-xs"></i>
+          </a>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+
+    <!-- Pagination -->
+    {{ $paginator := .Paginator }}
+    {{ if gt $paginator.TotalPages 1 }}
+    <nav class="flex items-center justify-center gap-1 mt-12" aria-label="Blog pagination">
+
+      {{/* Previous */}}
+      {{ if $paginator.HasPrev }}
+      <a href="{{ $paginator.Prev.URL }}"
+         class="inline-flex items-center justify-center w-9 h-9 rounded-lg border border-gray-200 text-gray-600 hover:border-el-amber-400 hover:text-el-amber-600 transition-colors text-sm">
+        <i class="fas fa-chevron-left text-xs"></i>
+      </a>
+      {{ else }}
+      <span class="inline-flex items-center justify-center w-9 h-9 rounded-lg border border-gray-100 text-gray-300 cursor-not-allowed text-sm">
+        <i class="fas fa-chevron-left text-xs"></i>
+      </span>
+      {{ end }}
+
+      {{/* Page numbers */}}
+      {{ range $paginator.Pagers }}
+      {{ if eq . $paginator }}
+      <span class="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-el-amber-500 text-white font-semibold text-sm">
+        {{ .PageNumber }}
+      </span>
+      {{ else }}
+      <a href="{{ .URL }}"
+         class="inline-flex items-center justify-center w-9 h-9 rounded-lg border border-gray-200 text-gray-600 hover:border-el-amber-400 hover:text-el-amber-600 transition-colors text-sm font-medium">
+        {{ .PageNumber }}
+      </a>
+      {{ end }}
+      {{ end }}
+
+      {{/* Next */}}
+      {{ if $paginator.HasNext }}
+      <a href="{{ $paginator.Next.URL }}"
+         class="inline-flex items-center justify-center w-9 h-9 rounded-lg border border-gray-200 text-gray-600 hover:border-el-amber-400 hover:text-el-amber-600 transition-colors text-sm">
+        <i class="fas fa-chevron-right text-xs"></i>
+      </a>
+      {{ else }}
+      <span class="inline-flex items-center justify-center w-9 h-9 rounded-lg border border-gray-100 text-gray-300 cursor-not-allowed text-sm">
+        <i class="fas fa-chevron-right text-xs"></i>
+      </span>
+      {{ end }}
+
+    </nav>
+    {{ end }}
+
+  </div>
+{{ end }}

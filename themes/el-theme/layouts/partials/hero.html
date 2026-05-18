@@ -1,0 +1,63 @@
+<!-- Hero Section -->
+<section class="relative min-h-[580px] md:min-h-[640px] flex items-center overflow-hidden bg-el-navy-900">
+
+  <!-- Background image with amber-tinted overlay -->
+  <div class="absolute inset-0">
+    <img src="{{ .Site.Params.hero_image }}"
+         alt="Aviation career training"
+         class="w-full h-full object-cover object-center" />
+    <div class="absolute inset-0"
+         style="background: linear-gradient(135deg, rgba(15,23,42,0.94) 0%, rgba(146,64,14,0.70) 55%, rgba(217,119,6,0.45) 100%);"></div>
+  </div>
+
+  <!-- Decorative elements -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div class="absolute -top-24 -right-24 w-96 h-96 bg-el-amber-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-1/2 w-64 h-64 bg-el-amber-500/5 rounded-full blur-2xl"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+    <div class="max-w-2xl">
+
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 bg-white/10 border border-white/25 text-white text-xs font-semibold px-4 py-1.5 rounded-full mb-6">
+        <i class="fas fa-certificate text-el-amber-300"></i>
+        JAIN University Partner &middot; JAINx Skilling Programme
+      </div>
+
+      <!-- Headline -->
+      <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-5">
+        {{ .Site.Params.hero_headline | safeHTML }}
+      </h1>
+
+      <!-- Subtext -->
+      <p class="text-lg leading-relaxed mb-8 max-w-xl text-white/80">
+        {{ .Site.Params.hero_subtext }}
+      </p>
+
+      <!-- CTA buttons -->
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a href="{{ .Site.Params.hero_cta_primary_url }}"
+           class="inline-flex items-center justify-center gap-2 bg-el-amber-500 hover:bg-el-amber-400 text-white font-semibold px-7 py-3.5 rounded-xl text-base transition-all duration-200 shadow-lg hover:-translate-y-0.5">
+          {{ .Site.Params.hero_cta_primary_text }}
+          <i class="fas fa-arrow-right text-sm"></i>
+        </a>
+        <a href="{{ .Site.Params.hero_cta_secondary_url }}"
+           class="inline-flex items-center justify-center gap-2 border border-white/40 hover:border-white text-white/80 hover:text-white font-semibold px-7 py-3.5 rounded-xl text-base transition-all duration-200">
+          {{ .Site.Params.hero_cta_secondary_text }}
+          <i class="fas fa-chevron-right text-sm"></i>
+        </a>
+      </div>
+
+      <!-- Quick trust bar -->
+      <div class="flex flex-wrap items-center gap-x-6 gap-y-2 mt-8 text-sm text-white/60">
+        <span class="flex items-center gap-1.5"><i class="fas fa-check-circle text-el-amber-300"></i> Placement Assistance</span>
+        <span class="flex items-center gap-1.5"><i class="fas fa-check-circle text-el-amber-300"></i> IATA Certification Support</span>
+        <span class="flex items-center gap-1.5"><i class="fas fa-check-circle text-el-amber-300"></i> Experienced Trainers</span>
+      </div>
+
+    </div>
+  </div>
+
+</section>

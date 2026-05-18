@@ -1,0 +1,61 @@
+{{ define "main" }}
+{{ partial "page-header.html" . }}
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20">
+
+  {{ if gt (len .Site.Data.team) 0 }}
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+    {{ range sort .Site.Data.team }}
+
+    <div class="bg-white rounded-2xl shadow-card hover:shadow-card-hover transition-shadow duration-200 flex flex-col"
+         x-data="{ expanded: false }">
+
+      <!-- Card top: avatar + name + role -->
+      <div class="flex flex-col items-center text-center px-6 pt-8 pb-5">
+
+        <!-- Circular photo -->
+        <div class="w-24 h-24 rounded-full overflow-hidden ring-4 ring-el-amber-100 mb-4 flex-shrink-0 bg-gradient-to-br from-el-navy-900 to-el-amber-700 flex items-center justify-center">
+          {{ if .image }}
+          <img src="{{ urls.JoinPath $.Site.BaseURL .image }}"
+               alt="{{ .name }}"
+               class="w-full h-full object-cover object-center" />
+          {{ else }}
+          <span class="text-2xl font-extrabold font-heading text-sky-200 select-none">
+            {{ substr .name 0 2 | upper }}
+          </span>
+          {{ end }}
+        </div>
+
+        <h3 class="font-heading font-extrabold text-el-navy-900 text-base leading-snug">{{ .name }}</h3>
+        <p class="text-el-amber-600 text-xs font-semibold uppercase tracking-wide mt-1">{{ .position }}</p>
+      </div>
+
+      {{ with .bio }}
+      <!-- Divider -->
+      <div class="mx-6 border-t border-gray-100"></div>
+
+      <!-- Bio preview (4 lines) always visible -->
+      <div class="px-6 pt-4 pb-1 text-sm text-gray-500 leading-relaxed"
+           :class="expanded ? '' : 'line-clamp-4'">
+        {{ . | markdownify }}
+      </div>
+
+      <!-- Expand / collapse -->
+      <button @click="expanded = !expanded"
+              class="mx-6 mb-5 mt-2 inline-flex items-center gap-1.5 text-xs font-semibold text-el-amber-500 hover:text-el-amber-700 transition-colors self-start">
+        <span x-text="expanded ? 'Show less' : 'Read more'"></span>
+        <i class="fas text-[9px] transition-transform duration-200"
+           :class="expanded ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+      </button>
+      {{ end }}
+
+    </div>
+
+    {{ end }}
+  </div>
+  {{ end }}
+
+</div>
+
+{{ partial "cta-band.html" . }}
+{{ end }}

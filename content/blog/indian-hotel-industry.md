@@ -1,0 +1,20 @@
++++
+title = "Indian Hotel Industry"
+date = "2011-12-16T13:01:33+00:00"
+tags = ["hotel", "Indian", "industry"]
+categories = ["Hospitality"]
+banner = "img/el/HotelIndustry.jpg"
+dsq_thread_id = "506453420"
++++
+
+The hotel industry in India thrives largely due to the growth in tourism and travel. The emergence of budget hotels in India to cater to the majority of the population who seek affordable accommodation has also materialized into an effective driver for growth. This sector will benefit due to certain Government regulations that will steer this sector towards further growth.
+
+<a href="http://cts.businesswire.com/ct/CT?id=smartlink&url=http%3A%2F%2Fwww.researchandmarkets.com%2Fresearch%2F0f65b8%2Fhotel_industry_in&esheet=50064206&lan=en-US&anchor=Hotel+Industry+in+India+2011&index=3&md5=3ad57682639cd1a28bc31aff8c97eaef" target="_blank"> Hotel Industry in India 2011 </a>  begins with an overview of the travel and tourism industry in India &#8211; providing the market size and growth as well as an indication of the foreign exchange earnings by the sector. This is followed by an overview of hotel industry. This provides an introduction to the Indian hotel industry and covers the market size and growth of luxury hotels as well as the market segmentation of the hotel rooms operational in India. The various types of hotels in India based on services provided are also highlighted. Furthermore, it covers the primary consumer base for this space. Additionally, it highlights the occupancy rates prevalent in the market.
+
+An analysis of the drivers reveals **the factors for growth of the market and includes growth in tourism, opening of the aviation sector, emergence of budget hotels, shortage of hotel rooms and major events.** India being a land of rich natural diversity has consistently been on the tourists&#8217; radar and tourism has been on a growth trajectory. India is presently considered a provider of low cost medical treatments, which has led to the development of India as a destination for medical tourism. These factors have contributed to the growth of tourism which is a powerful driver for growth of the hotel sector. **The opening up of the aviation sector has provided the needed thrust.**
+
+The growth would primarily be driven by the rise in domestic tourists. **The growth in domestic tourist arrivals can be attributed to the rise in both leisure and business travellers.** The growth in leisure travelers would be driven by the rise in personal discretionary income, the higher usage of credit cards, the popularized weekend vacation culture and the growing number of multiple earner families. **The increase in business travellers can be attributed to the growing trade and commerce, the increasing number of Meetings-Incentives-Conferences-Exhibitions (MICE) destinations, the increasing number of multi-national companies setting up their base in India and the improvement in air, road and rail connectivity.**
+
+Major players diversifying into the mid-market segment to develop budget hotels has also been an added driving force. Such hotels are constructed to tap prospective consumers who seek stay at affordable price. International companies are increasingly looking at setting up such hotels. Imbalance in increase in tourists both domestic and foreign not been supported with equal number of rooms is a latent source of opportunity for growth. Additionally, the rise in major events being organized in India has also posed as a chief driver for the sector. However, the sector is also facing certain challenges. Factors such as socio-political concerns, lack of infrastructure and increasing operating costs pose as barriers to the growth of this sector.
+
+The major trends identified in the market include entry of foreign players, franchising model of operation and special services for female guests. This sector is also affected by certain Government regulations such as the setting up of Hospitality Development and Promotion Board, changes in the taxation system as well as tourism enhancement.

@@ -1,0 +1,59 @@
+{{ if gt (len .Site.Data.features) 0 }}
+<!-- Courses / Features Section -->
+<section class="py-16 md:py-20 bg-el-amber-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Section header -->
+    <div class="text-center mb-12">
+      <p class="text-el-amber-500 text-sm font-semibold uppercase tracking-widest mb-2">What We Teach</p>
+      <h2 class="font-heading text-3xl md:text-4xl font-extrabold text-el-navy-900 mb-4">Choose Your Career Path</h2>
+      <p class="text-gray-500 max-w-2xl mx-auto text-base leading-relaxed">
+        {{ .Site.Params.features_subtitle | safeHTML }}
+      </p>
+    </div>
+
+    <!-- Course cards grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {{ range sort .Site.Data.features "weight" }}
+      <a href="{{ .url }}"
+         class="group flex flex-col bg-white border border-gray-100 rounded-2xl p-6 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-200">
+
+        <!-- Icon circle -->
+        <div class="w-12 h-12 rounded-xl bg-el-amber-100 flex items-center justify-center mb-4 group-hover:bg-el-amber-500 transition-colors duration-200">
+          <i class="{{ .icon }} text-el-amber-500 text-lg group-hover:text-white transition-colors duration-200"></i>
+        </div>
+
+        <h3 class="font-heading text-lg font-bold text-el-navy-900 mb-2 group-hover:text-el-amber-600 transition-colors duration-200">
+          {{ .name }}
+        </h3>
+        <p class="text-gray-500 text-sm leading-relaxed flex-1">
+          {{ .description | safeHTML }}
+        </p>
+
+        <div class="flex items-center gap-1 mt-4 text-el-amber-500 text-sm font-semibold">
+          Learn more
+          <i class="fas fa-arrow-right text-xs group-hover:translate-x-1 transition-transform duration-200"></i>
+        </div>
+
+      </a>
+      {{ end }}
+    </div>
+
+    <!-- Partner logos -->
+    <div class="mt-12 pt-8 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-center gap-6">
+      <span class="text-sm text-gray-400 font-medium">In partnership with</span>
+      <div class="flex items-center gap-8">
+        <a href="{{ .Site.Params.jainx_url }}" target="_blank" rel="noopener">
+          <img src="{{ urls.JoinPath .Site.BaseURL .Site.Params.jainx_logo }}"
+               alt="JAINx" class="h-10 object-contain opacity-70 hover:opacity-100 transition-opacity" />
+        </a>
+        <a href="{{ .Site.Params.jain_url }}" target="_blank" rel="noopener">
+          <img src="{{ urls.JoinPath .Site.BaseURL .Site.Params.jain_logo }}"
+               alt="JAIN University" class="h-10 object-contain opacity-70 hover:opacity-100 transition-opacity" />
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,189 @@
+{{ define "main" }}
+{{ partial "page-header.html" . }}
+
+<div class="bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14"
+       x-data="{ open: {} }">
+
+    <!-- ── JAIN partnership notice ──────────────────────────────────────── -->
+    <div class="bg-el-amber-50 border border-el-amber-200 rounded-xl px-5 py-4 flex items-start gap-3 mb-10">
+      <i class="fas fa-certificate text-el-amber-500 mt-0.5 flex-shrink-0"></i>
+      <p class="text-sm text-gray-700 leading-relaxed">
+        <strong class="text-el-navy-900">JAIN University Partner.</strong>
+        Courses run in partnership with
+        <a href="https://www.juxhub.com/" target="_blank" rel="noopener" class="text-el-amber-600 hover:underline font-medium">JAINx</a>,
+        offering Skill Diploma and Certificate courses with
+        <a href="https://www.jainuniversity.ac.in/" target="_blank" rel="noopener" class="text-el-amber-600 hover:underline font-medium">JAIN (Deemed-to-be University)</a>
+        as Knowledge Partner.
+        <a href="/courses/ELCourses2018.pdf" target="_blank" download
+           class="ml-1 inline-flex items-center gap-1 text-el-amber-600 font-semibold hover:underline">
+          <i class="fas fa-download text-xs"></i> Download brochure
+        </a>
+      </p>
+    </div>
+
+    <!-- ── Course cards grid ────────────────────────────────────────────── -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-4">
+      {{ range .Site.Data.courses }}
+      <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm
+                  hover:shadow-md hover:border-el-amber-200 transition-all duration-200
+                  flex flex-col">
+
+        <!-- Icon + duration badge -->
+        <div class="flex items-start justify-between gap-3 mb-4">
+          <div class="w-12 h-12 bg-el-amber-100 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i class="{{ .icon }} text-el-amber-600 text-xl"></i>
+          </div>
+          <span class="text-xs font-semibold bg-el-navy-900 text-white px-3 py-1 rounded-full flex-shrink-0 mt-1 whitespace-nowrap">
+            {{ .duration }}
+          </span>
+        </div>
+
+        <!-- Name -->
+        <h3 class="font-heading font-bold text-el-navy-900 text-base leading-snug mb-2">
+          {{ .name }}
+        </h3>
+
+        <!-- Description -->
+        <p class="text-sm text-gray-500 leading-relaxed flex-1 mb-5">
+          {{ .description }}
+        </p>
+
+        <!-- View details toggle -->
+        <button
+          @click="open['{{ .id }}'] = !open['{{ .id }}']; $nextTick(() => { if (open['{{ .id }}']) document.getElementById('details-{{ .id }}').scrollIntoView({ behavior: 'smooth', block: 'start' }) })"
+          class="flex items-center gap-1.5 text-sm font-semibold text-el-amber-600
+                 hover:text-el-amber-700 transition-colors self-start">
+          <span x-text="open['{{ .id }}'] ? 'Hide details' : 'View details'">View details</span>
+          <svg :class="open['{{ .id }}'] ? 'rotate-180' : ''"
+               class="w-4 h-4 transition-transform duration-200"
+               fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+
+      </div>
+      {{ end }}
+    </div>
+
+    <!-- ── Course detail panels ──────────────────────────────────────────── -->
+    <div class="space-y-4 mt-6">
+      {{ range .Site.Data.courses }}
+      <div id="details-{{ .id }}"
+           x-show="open['{{ .id }}']"
+           x-transition:enter="transition ease-out duration-200"
+           x-transition:enter-start="opacity-0 -translate-y-1"
+           x-transition:enter-end="opacity-100 translate-y-0"
+           x-transition:leave="transition ease-in duration-150"
+           x-transition:leave-start="opacity-100 translate-y-0"
+           x-transition:leave-end="opacity-0 -translate-y-1"
+           x-cloak
+           class="border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+
+        <!-- Panel header (dark navy) -->
+        <div class="bg-el-navy-900 px-6 py-4 flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 bg-el-amber-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+              <i class="{{ .icon }} text-el-amber-400 text-sm"></i>
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-white text-base leading-tight">{{ .name }}</h3>
+              <span class="text-xs text-el-amber-400 font-medium">{{ .duration }}</span>
+            </div>
+          </div>
+          <button @click="open['{{ .id }}'] = false"
+                  class="text-gray-400 hover:text-white transition-colors p-1 rounded-lg hover:bg-white/10"
+                  aria-label="Close">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Panel body -->
+        <div class="bg-gray-50 p-6 space-y-4">
+
+          {{/* Highlight strip (e.g. internship note for Hospitality) */}}
+          {{ with .highlight }}
+          <div class="bg-el-amber-50 border border-el-amber-200 rounded-xl px-4 py-3 flex items-center gap-2">
+            <i class="fas fa-star text-el-amber-500 flex-shrink-0 text-sm"></i>
+            <p class="text-sm font-medium text-el-navy-900">{{ . }}</p>
+          </div>
+          {{ end }}
+
+          {{/* Eligibility + Modules two-column */}}
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-0 bg-white rounded-xl border border-gray-200 overflow-hidden divide-y md:divide-y-0 md:divide-x divide-gray-100">
+            <div class="p-5">
+              <h5 class="text-xs font-bold text-el-amber-600 uppercase tracking-widest mb-3">Eligibility</h5>
+              <ul class="space-y-2">
+                {{ range .eligibility }}
+                <li class="flex items-start gap-2 text-sm text-gray-600">
+                  <span class="w-1.5 h-1.5 rounded-full bg-el-amber-500 flex-shrink-0 mt-1.5"></span>
+                  <span>{{ . }}</span>
+                </li>
+                {{ end }}
+              </ul>
+            </div>
+            <div class="p-5">
+              <h5 class="text-xs font-bold text-el-navy-700 uppercase tracking-widest mb-3">Modules</h5>
+              <ul class="space-y-2">
+                {{ range .modules }}
+                <li class="flex items-start gap-2 text-sm text-gray-600">
+                  <span class="w-1.5 h-1.5 rounded-full bg-el-navy-400 flex-shrink-0 mt-1.5"></span>
+                  <span>{{ . }}</span>
+                </li>
+                {{ end }}
+              </ul>
+            </div>
+          </div>
+
+          {{/* Optional IATA certifications (aviation courses only) */}}
+          {{ with .iata }}
+          <div class="bg-el-amber-50 border border-el-amber-100 rounded-xl p-5">
+            <h5 class="font-semibold text-el-navy-900 text-sm mb-3 flex items-center gap-2">
+              <i class="fas fa-certificate text-el-amber-500"></i>
+              Optional IATA Online Certifications
+            </h5>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5">
+              {{ range . }}
+              <div class="flex items-start gap-2 text-sm text-gray-600">
+                <span class="w-1.5 h-1.5 rounded-full bg-el-amber-500 flex-shrink-0 mt-1.5"></span>
+                <span>{{ . }}</span>
+              </div>
+              {{ end }}
+            </div>
+          </div>
+          {{ end }}
+
+        </div>
+      </div>
+      {{ end }}
+    </div>
+
+    <!-- ── Bottom CTA ────────────────────────────────────────────────────── -->
+    <div class="mt-14 bg-el-amber-50 border border-el-amber-100 rounded-2xl p-8 text-center">
+      <h3 class="font-heading text-2xl font-bold text-el-navy-900 mb-2">Not sure which course is right for you?</h3>
+      <p class="text-gray-500 mb-5 text-sm">Talk to our counsellors — we'll help you find the perfect fit for your goals.</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+        <a href="/contact/"
+           class="bg-el-amber-500 hover:bg-el-amber-600 text-white font-semibold px-7 py-3 rounded-xl
+                  text-sm transition-all duration-150 shadow hover:shadow-md">
+          Talk to a counsellor
+        </a>
+        {{ with .Site.Params.whatsapp }}
+        <a href="https://wa.me/{{ . }}?text=Hi%2C%20I%27d%20like%20guidance%20on%20choosing%20a%20course."
+           target="_blank" rel="noopener"
+           class="flex items-center gap-2 border border-green-500 text-green-700
+                  hover:bg-green-500 hover:text-white font-semibold px-7 py-3 rounded-xl
+                  text-sm transition-all duration-150">
+          <i class="fab fa-whatsapp text-base"></i> WhatsApp us
+        </a>
+        {{ end }}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{{ partial "cta-band.html" . }}
+{{ end }}

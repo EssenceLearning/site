@@ -1,0 +1,5 @@
+name = "el-theme"
+license = "MIT"
+description = "Custom theme for Essence Learning — Tailwind CSS v3 + Alpine.js v3"
+homepage = "https://essencelearning.in"
+min_version = "0.110.0"

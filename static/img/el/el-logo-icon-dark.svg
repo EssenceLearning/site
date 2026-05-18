@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <clipPath id="c"><circle cx="100" cy="100" r="90"/></clipPath>
+  </defs>
+
+  <!-- Navy circle background -->
+  <circle cx="100" cy="100" r="90" fill="#0f172a"/>
+
+  <!-- White ring — ensures visibility on dark/navy backgrounds -->
+  <circle cx="100" cy="100" r="91.5" fill="none" stroke="white" stroke-width="2.5"/>
+
+  <!-- All content clipped to circle -->
+  <g clip-path="url(#c)">
+    <!-- E letterform (white) -->
+    <rect x="20" y="36" width="17" height="90" fill="white" rx="2"/>
+    <rect x="20" y="36" width="52" height="18" fill="white" rx="2"/>
+    <rect x="20" y="76" width="44" height="15" fill="white" rx="2"/>
+    <rect x="20" y="108" width="52" height="18" fill="white" rx="2"/>
+
+    <!-- L letterform (amber) -->
+    <rect x="79" y="50" width="17" height="76" fill="#f59e0b" rx="2"/>
+    <rect x="79" y="108" width="54" height="18" fill="#f59e0b" rx="2"/>
+
+    <!-- Human figure head (amber) -->
+    <circle cx="150" cy="37" r="10" fill="#f59e0b"/>
+
+    <!-- Body swoosh (white) -->
+    <path d="M 55 136 C 60 98, 110 68, 143 51"
+          stroke="white" stroke-width="7.5" fill="none" stroke-linecap="round"/>
+
+    <!-- Trajectory arc (amber) -->
+    <path d="M 42 160 C 68 115, 128 80, 172 60"
+          stroke="#f59e0b" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+
+    <!-- Airplane (top-down, pointing upper-right ~42°) -->
+    <g transform="translate(169,61) rotate(-42)">
+      <path d="M 0 -9 C 2 -5, 3 0, 3 5 L 0 8 L -3 5 C -3 0, -2 -5, 0 -9 Z" fill="#f59e0b"/>
+      <path d="M -1.5 -2 L -14 5 L -13 8.5 L -1.5 3 Z" fill="#f59e0b"/>
+      <path d="M 1.5 -2 L 14 5 L 13 8.5 L 1.5 3 Z" fill="#f59e0b"/>
+      <path d="M -1.5 5.5 L -6.5 11 L -5 7 Z" fill="#f59e0b"/>
+      <path d="M 1.5 5.5 L 6.5 11 L 5 7 Z" fill="#f59e0b"/>
+    </g>
+  </g>
+
+  <!-- Sparkle star (amber) — outside circle, upper right -->
+  <g transform="translate(179,24)">
+    <path d="M 0 -9 L 2.2 -2.2 L 9 0 L 2.2 2.2 L 0 9 L -2.2 2.2 L -9 0 L -2.2 -2.2 Z"
+          fill="#f59e0b"/>
+  </g>
+</svg>

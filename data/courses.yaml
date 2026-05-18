@@ -1,0 +1,162 @@
+# ── Aviation courses ───────────────────────────────────────────────────────────
+- id: aviation-hospitality
+  name: Aviation & Hospitality Management
+  icon: "fa fa-plane"
+  duration: "3–12 months"
+  description: "The most comprehensive track — covers Inflight service, Airport Ground Handling and Hotel Hospitality in one programme."
+  eligibility:
+    - "Age: 18–27 years (relaxable by 3 years for SC/ST/OBC for Indian carriers)"
+    - "Qualification: 10+2 or Graduate in any discipline from a recognised university"
+    - "Height: Female min. 5 ft 2 in | Male min. 5 ft 5 in"
+    - "Weight: In proportion to height"
+    - "Vision: Normal eyesight"
+    - "Language: Fluency in English and Hindi; regional language an advantage"
+  modules:
+    - "Introduction to Aviation, Airline Departments and Regulatory Authorities"
+    - "Crew Healthy Living, Lifestyle and Aircraft Familiarisation"
+    - "Ground and Inflight Handling — Baggage, IATA Codes and Emergency Systems"
+    - "Fire Fighting, First Aid, Dangerous Goods, Security, Evacuations and Survival"
+    - "Airport and Aircraft Security — Basic AvSec"
+    - "Hotel Hospitality Management (refer Hospitality syllabus)"
+    - "Grooming, Personality Development, Communication and Interview Skills"
+  iata:
+    - "Basic Air Side Safety"
+    - "Introduction to Safety Management Systems"
+    - "Dangerous Goods Regulations (Cabin Crew, Cargo, Passenger Handling)"
+    - "Geography in Travel Planning"
+    - "Introduction to BSP Link"
+    - "Smart Amadeus / Galileo / Sabre — GDS Reservations"
+    - "Destination Geography and Serving the Travel Customer"
+
+- id: aviation-management
+  name: Aviation Management
+  icon: "fa fa-plane"
+  duration: "3–12 months"
+  description: "Covers both Inflight service and Airport Ground Handling — ideal for cabin crew and airport operations roles."
+  eligibility:
+    - "Age: 18–27 years (relaxable by 3 years for SC/ST/OBC)"
+    - "Qualification: 10+2 or Graduate in any discipline"
+    - "Height: Female min. 5 ft 2 in | Male min. 5 ft 5 in"
+    - "Weight: In proportion to height"
+    - "Vision: Normal eyesight"
+    - "Language: Fluency in English and Hindi"
+  modules:
+    - "Introduction to Aviation, Airline Departments and Regulatory Authorities"
+    - "Ground and Inflight Handling — Landside/Airside Safety, Ramp Services, IATA Codes"
+    - "Fire Fighting, First Aid, Dangerous Goods, Security, Evacuations and Survival"
+    - "Airport and Aircraft Security — Basic AvSec"
+    - "Grooming, Personality Development, Communication and Interview Skills"
+  iata:
+    - "Basic Air Side Safety"
+    - "Introduction to Safety Management Systems"
+    - "Dangerous Goods Regulations (Cabin Crew, Cargo, Passenger Handling)"
+    - "Geography in Travel Planning"
+    - "Introduction to BSP Link"
+    - "Smart Amadeus / Galileo / Sabre — GDS Reservations"
+    - "Destination Geography and Serving the Travel Customer"
+
+- id: ground-services
+  name: Airport Ground Services
+  icon: "fa fa-suitcase"
+  duration: "3–6 months"
+  description: "Focused on Airport Ground Handling only — landside and airside operations, ramp and baggage handling."
+  eligibility:
+    - "Age: 18–27 years"
+    - "Language: Fluency in English and Hindi"
+  modules:
+    - "Introduction to Aviation, Airline Departments and Regulatory Authorities"
+    - "Ground Handling — Landside/Airside Safety, Pre/Post Flight Planning, Ramp and Baggage"
+    - "Fire Fighting, First Aid, Bomb Threat, Dangerous Goods and IATA Codes"
+    - "Airport and Aircraft Security — Basic AvSec"
+    - "Grooming, Personality Development, Communication and Interview Skills"
+  iata:
+    - "Basic Air Side Safety"
+    - "Introduction to Safety Management Systems"
+    - "Dangerous Goods Regulations"
+    - "Smart Amadeus / Galileo / Sabre — GDS Reservations"
+
+# ── Hospitality ────────────────────────────────────────────────────────────────
+- id: hospitality
+  name: Hotel & Hospitality Management
+  icon: "fas fa-concierge-bell"
+  duration: "3–12 months"
+  description: "Covers hotel management, front-desk and back-office operations. Includes dedicated internship and placement support in star hotels."
+  eligibility:
+    - "Aspirants or working professionals in the hospitality sector looking to enhance their industry knowledge"
+  modules:
+    - "Hospitality, Hotel Industry and Tourism"
+    - "Hotel Departments and Interdepartmental Coordination"
+    - "Hotel Abbreviations, Formulas, Reports, Night Audits and Cashiering"
+    - "Hierarchy, Trends, Technology, Service, First Aid, Fire and Food Science"
+    - "Environmental Studies, Facilities Planning, Sales and Marketing, Management Techniques"
+    - "Body Language, Grooming, Interpersonal Skills and Interview Preparation"
+  highlight: "We assist in domestic and international internship and placements in star hotels."
+
+# ── Skills courses ─────────────────────────────────────────────────────────────
+- id: pr-communication
+  name: Public Relations & Communication
+  icon: "fa fa-globe"
+  duration: "1–3 months"
+  description: "Builds world-class communication, presentation and interpersonal skills for the professional environment."
+  eligibility:
+    - "Fluency in English and Hindi; knowledge of a regional language is an advantage"
+  modules:
+    - "Effective Communication and Communication Skills"
+    - "Leadership, Motivation, Discipline, Negotiation and Creative Thinking"
+    - "Winning Skills, Jargon-free Language and Presentation Skills"
+    - "Body Language and Grooming"
+    - "Business Etiquettes — First Impressions, Telephone, Email and Meeting Etiquette"
+    - "Interpersonal Skills, Voice and Speech"
+    - "Time, Stress and Anger Management; Cross-Culture Training"
+
+- id: personality-development
+  name: Personality Development
+  icon: "fa fa-universal-access"
+  duration: "1–3 months"
+  description: "Enhances overall personality — confidence, communication, leadership and mindset — for students and working professionals."
+  eligibility:
+    - "Working professionals, college students, or anyone looking to enhance their personality"
+  modules:
+    - "Confidence, Self-Understanding and Strengths/Weaknesses"
+    - "Career Guidance and Interview Preparation"
+    - "Motivation, Optimism and Positive Attitude"
+    - "Communication — Listening, Public Speaking and Presenting"
+    - "Leadership, Assertiveness and Conquering Fear"
+    - "Organisation, Efficiency and Goal Setting"
+    - "Purpose, Vision and Emotional Wellbeing"
+
+- id: soft-skills
+  name: Soft / Life Skills Development
+  icon: "fas fa-handshake"
+  duration: "1–3 months"
+  description: "Enhances psycho-social abilities across two programme tracks — Front-Line Staff and Middle Management."
+  eligibility:
+    - "Working professionals, college students, or anyone looking to enhance their life and workplace skills"
+  modules:
+    - "Personal and Interpersonal Attributes; Business Etiquettes"
+    - "Communication, Accent Neutralisation and Global Culture Sensitivity"
+    - "Client Interfacing, Customer Service and Selling Skills"
+    - "Team Skills, Problem Solving and Goal Setting"
+    - "Time and Stress Management; Telephone and Email Etiquettes"
+    - "Emotional Intelligence and Critical Thinking"
+    - "Leadership, Delegation and Coaching (Management track)"
+    - "Performance Appraisal, Change Management and Conflict Resolution (Management track)"
+    - "Negotiation, Public Speaking and Presentation Skills"
+    - "Behavioural and Motivational Training"
+
+- id: grooming
+  name: Grooming / Image Consulting
+  icon: "fas fa-smile"
+  duration: "1–2 weeks"
+  description: "A focused programme on personal presentation, grooming and professional etiquette."
+  eligibility:
+    - "Working professionals, college students, or anyone looking to enhance their image and presentation"
+  modules:
+    - "Impressions Management — Body Language, Voice and Personal Attributes"
+    - "Personal Hygiene and Skincare"
+    - "Hair Care and Hairstyle Workshop"
+    - "Image Enhancement — Corporate and Dining Etiquette"
+    - "Makeup Workshop"
+    - "Appropriate and Inappropriate Dressing; Power Dressing"
+    - "Interview Skills — Resume, Group Discussion and Personal Interview Tips"
+    - "Customer Delight and Weight Management Workshop"

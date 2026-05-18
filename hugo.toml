@@ -1,0 +1,150 @@
+baseurl = "https://essencelearning.in/"
+title = "Essence Learning"
+theme = "el-theme"
+publishDir = "docs"
+languageCode = "en-us"
+defaultContentLanguage = "en"
+
+disqusShortname = "essencelearningwp"
+
+[services.googleAnalytics]
+  ID = "G-NPTFN9RQ9G"
+
+[pagination]
+  pagerSize = 10
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[Permalinks]
+  blog = "/blog/:year/:month/:day/:contentbasename/"
+
+# ── Menus ──────────────────────────────────────────────────────────────────
+[menu]
+
+[[menu.main]]
+  name = "Home"
+  url  = "/"
+  weight = 1
+
+[[menu.main]]
+  name = "Courses"
+  url  = "/courses/"
+  identifier = "menu.courses"
+  weight = 2
+
+[[menu.main]]
+  name = "Regular Courses"
+  url  = "/courses/"
+  weight = 1
+  parent = "menu.courses"
+
+[[menu.main]]
+  name = "Introductory Pilot Course"
+  url  = "/introcourse/"
+  weight = 2
+  parent = "menu.courses"
+
+[[menu.main]]
+  name = "Team"
+  url  = "/team/"
+  weight = 3
+
+[[menu.main]]
+  name = "FAQ"
+  url  = "/faq/"
+  weight = 4
+
+[[menu.main]]
+  name = "Blog"
+  url  = "/blog/"
+  weight = 5
+
+[[menu.main]]
+  name = "Gallery"
+  url  = "/gallery/"
+  weight = 6
+
+[[menu.main]]
+  name = "Contact"
+  url  = "/contact/"
+  weight = 7
+
+# ── Site Params ────────────────────────────────────────────────────────────
+[params]
+  author              = "Essence Learning"
+  defaultKeywords     = ["aviation", "hospitality", "ground staff", "training", "bangalore"]
+  defaultDescription  = "Essence Learning — Aviation and Hospitality vocational training and placement institute in Bangalore."
+  date_format         = "January 2, 2006"
+
+  logo       = "img/el/el-logo-icon.svg"
+  logo_small = "img/el/el-logo-icon-dark.svg"
+  logo_nav   = "img/el/ELLogoJuly2023.jpg"
+
+  email = "info@essencelearning.in"
+
+  # Contact form → Google Sheets Apps Script endpoint
+  # TODO: paste your deployed Apps Script /exec URL here after deployment
+  forms_endpoint = "https://script.google.com/macros/s/AKfycbxUl5x49sRCVBtqnFWFIWVUWZ_ALXZ277fAVuHh3LJtw5PSFHLsVNAV59qrvLp5HP46oA/exec"
+  phone1 = "+91 96631 78645"
+  phone2 = "+91 99539 66061"
+  whatsapp = "919663178645"
+
+  googleMapsApiKey = ""
+  googleMapsEmbed  = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.5939!2d77.627!3d12.934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sEssence%20Learning!5e0!3m2!1sen!2sin!4v1"
+
+  copyright = "Copyright &copy; 2023&ndash;2024 Essence Learning. All rights reserved."
+
+  about_us = "Essence Learning is an Aviation and Hospitality Vocational Training and Placement Institute providing quality, affordable training in Bangalore."
+
+  address_line1 = "BizzHub, 2nd Floor"
+  address_line2 = "80 Feet Road, Barleyz Junction"
+  address_line3 = "Sony World Crossing, Koramangala"
+  address_city  = "Bangalore 560034, India"
+  maps_url      = "https://goo.gl/maps/mUkDk4SqiVb7Wae28"
+
+  # Social
+  facebook  = "https://www.facebook.com/EssenceLearningBangalore"
+  linkedin  = "http://www.linkedin.com/in/essencelearning"
+
+  # Hero
+  hero_headline   = "Launch Your Career in Aviation & Hospitality"
+  hero_subtext    = "Affordable, industry-ready training in Bangalore. 3–12 month courses with IATA certification support and dedicated placement assistance."
+  hero_image      = "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&q=80"
+  hero_cta_primary_text = "Enquire Now"
+  hero_cta_primary_url  = "/contact/"
+  hero_cta_secondary_text = "View Courses"
+  hero_cta_secondary_url  = "/courses/"
+
+  # Stats strip (edit these with real numbers)
+  stat1_number = "500+"
+  stat1_label  = "Students Placed"
+  stat2_number = "12+"
+  stat2_label  = "Years Active"
+  stat3_number = "6"
+  stat3_label  = "Courses Offered"
+  stat4_number = "JAIN"
+  stat4_label  = "University Partner"
+
+  # Features section
+  features_subtitle = "SKILLING PARTNER OF JAINx · ENDORSED BY JAIN (DEEMED-TO-BE UNIVERSITY)"
+
+  # Testimonials
+  testimonials_title    = "What Our Students Say"
+  testimonials_subtitle = "We have helped hundreds of Aviation and Hospitality aspirants realise their dream."
+
+  # Team
+  team_title    = "Meet the Team"
+  team_subtitle = "Learn from experienced industry professionals."
+
+  # CTA band
+  cta_headline = "Ready to start your aviation or hospitality career?"
+  cta_subtext  = "Fill in your details and we'll get back within 48 hours."
+  cta_button   = "Enquire Now"
+  cta_url      = "/contact/"
+
+  # Partner logos
+  jainx_logo = "img/el/jainx-logo.png"
+  jainx_url  = "https://www.juxhub.com/"
+  jain_logo  = "img/el/jain-logo jgi.png"
+  jain_url   = "https://www.jainuniversity.ac.in/"
