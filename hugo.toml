@@ -17,7 +17,7 @@ disqusShortname = "essencelearningwp"
   unsafe = true
 
 [Permalinks]
-  blog = "/blog/:year/:month/:day/:contentbasename/"
+  blog = "/blog/:year/:month/:day/:filename/"
 
 # ── Menus ──────────────────────────────────────────────────────────────────
 [menu]
