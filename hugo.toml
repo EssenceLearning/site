@@ -19,6 +19,15 @@ disqusShortname = "essencelearningwp"
 [Permalinks]
   blog = "/blog/:year/:month/:day/:filename/"
 
+# TODO: if blog content is organised into year/month subfolders (content/blog/YYYY/MM/),
+# add a [[cascade]] block here to suppress the auto-generated year/month list pages:
+#
+#   [[cascade]]
+#     headless = true
+#     [cascade._target]
+#       path = "/blog/**"
+#       kind = "section"
+
 # ── Menus ──────────────────────────────────────────────────────────────────
 [menu]
 
