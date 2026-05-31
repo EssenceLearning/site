@@ -11,7 +11,7 @@ disqusShortname = "essencelearningwp"
   ID = "G-NPTFN9RQ9G"
 
 [pagination]
-  pagerSize = 10
+  pagerSize = 12
 
 [markup.goldmark.renderer]
   unsafe = true
