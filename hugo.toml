@@ -19,6 +19,12 @@ disqusShortname = "essencelearningwp"
 [Permalinks]
   blog = "/blog/:year/:month/:day/:filename/"
 
+# TODO (future): migrate blog permalinks from date-based to slug-only (/blog/:slug/).
+# All 25 posts have been reviewed — strategy is clean, no slug conflicts.
+# Work involved: 1-line permalink change + aliases on 18 old posts + 9 FAQ link updates.
+# New posts in 2026/05 and 2026/06 already have explicit slug frontmatter and need no changes.
+# See conversation history for full per-post URL mapping table before making this change.
+
 # TODO: if blog content is organised into year/month subfolders (content/blog/YYYY/MM/),
 # add a [[cascade]] block here to suppress the auto-generated year/month list pages:
 #
