@@ -1,7 +1,7 @@
 +++
 title = "Enhancing Guest Experience in Hospitality: Key Insights for Frontline Staff"
 date = "2026-06-16T15:40:28+05:30"
-banner = "/img/blog/hospitality_guest_experience_001.webp"
+banner = "/img/blog/IMG_4005.webp"
 categories = ["hospitality"]
 tags = ["guest_experience", "customer_service", "service_excellence"]
 author = "Essence Learning"
