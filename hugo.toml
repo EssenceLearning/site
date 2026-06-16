@@ -17,7 +17,7 @@ disqusShortname = "essencelearningwp"
   unsafe = true
 
 [Permalinks]
-  blog = "/blog/:year/:month/:day/:filename/"
+  blog = "/blog/:year/:month/:day/:contentbasename/"
 
 # TODO (future): migrate blog permalinks from date-based to slug-only (/blog/:slug/).
 # All 25 posts have been reviewed — strategy is clean, no slug conflicts.
