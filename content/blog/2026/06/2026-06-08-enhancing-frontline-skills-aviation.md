@@ -1,7 +1,7 @@
 +++
 title = "Enhancing Frontline Skills in Aviation: A Practical Guide"
 date = "2026-06-08T00:31:43+05:30"
-banner = "/img/blog/avaition-frontline.webp"
+banner = "/img/blog/aviation-frontline.webp"
 categories = ["aviation"]
 tags = ["aviation", "frontline skills", "customer service", "professional development"]
 author = "Essence Learning"
